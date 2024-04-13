@@ -71,9 +71,13 @@ def setplaystate(state,detail):
     playbackstate=state
     if state==1:
         res=sendrpc("Player.GetActivePlayers",{})
-        activeplayerid=res["result"][0]["playerid"]
-        activeplayertype=res["result"][0]["type"]
-        if mqttdetails and ignorelist(mqttignore,"filepath"):
+        if res["result"]:
+            activeplayerid=res["result"][0]["playerid"]
+            activeplayertype=res["result"][0]["type"]
+        else:
+            activeplayerid=None
+            activeplayertype=None
+        if mqttdetails and ignorelist(mqttignore,"filepath") and activeplayerid is not None:
             res=sendrpc("Player.GetProperties",{"playerid":activeplayerid,"properties":["speed","currentsubtitle","currentaudiostream","repeat","subtitleenabled"]})
             publish("playbackstate",state,{"kodi_state":detail,"kodi_playbackdetails":res["result"],"kodi_playerid":activeplayerid,"kodi_playertype":activeplayertype,"kodi_timestamp":int(time.time())})
             publishdetails()
