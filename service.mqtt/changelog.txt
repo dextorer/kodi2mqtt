@@ -1,3 +1,8 @@
+v0.14 - 2024-04-13 - dextorer
+  - add Python 3 compatibility
+  - fix wrong default value for port settings
+  - fix error when accessing active player info when no info is available
+
 v0.13 - 2016-05-01 - owagner
   - change logic for command/playbackstate:
      - resume/play/1 will now properly resume when pausing, and attempt to
