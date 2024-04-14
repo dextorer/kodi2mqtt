@@ -22,8 +22,7 @@ Dependencies
 * Eclipse Paho for Python - http://www.eclipse.org/paho/clients/python/
   (used for MQTT communication)
 
-[![Build Status](https://travis-ci.org/dextorer/kodi2mqtt.svg)](https://travis-ci.org/dextorer/kodi2mqtt) Automatically built addons can be downloaded from the release page on GitHub at https://github.com/dextorer/kodi2mqtt/releases
-
+[![Build Status](https://github.com/dextorer/kodi2mqtt/actions/workflows/main.yaml/badge.svg)](https://github.com/dextorer/kodi2mqtt/actions) Automatically built addons can be downloaded from the release page on GitHub at https://github.com/dextorer/kodi2mqtt/releases
 
 Settings
 --------
